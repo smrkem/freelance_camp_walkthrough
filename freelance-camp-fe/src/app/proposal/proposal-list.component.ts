@@ -4,7 +4,8 @@ import { Proposal } from './proposal';
 @Component({
   moduleId: module.id,
   selector: 'proposal-list',
-  templateUrl: 'proposal-list.component.html'
+  templateUrl: 'proposal-list.component.html',
+  styleUrls: ['proposal-list.component.css']
 })
 export class ProposalListComponent {
   proposalOne: Proposal = new Proposal(23, "ACME", "http://example.com/portfolio-a", "Rails, Angular 2", 150, 120, 15, "dude@example.com")

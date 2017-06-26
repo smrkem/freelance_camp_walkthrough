@@ -1,0 +1,45 @@
+.app-body {
+  margin-top: 80px;
+}
+
+.nav-styles {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+
+  background-color: #1a1b22;
+}
+
+.navbar-nav {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.navbar-nav .nav-link {
+    padding-right: .5rem;
+    padding-left: .5rem;
+}
+
+.nav-styles a {
+  color: white;
+}
+.nav-styles .nav-link.active {
+  color: #e64758;
+}
+.nav-styles a:hover {
+  color: #c6c6c6;
+}
+
+.nav-styles .dropdown-menu {
+  background-color: #1a1b22;
+}
+.nav-styles .dropdown-menu a:hover {
+  background-color: #333;
+}
+.nav-styles .dropdown-menu a.active:hover {
+  background-color: #0275d8;
+}

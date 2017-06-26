@@ -1,0 +1,6 @@
+.proposal-list-item a {
+  width: 100%;
+}
+.proposal-list-item a:hover {
+  text-decoration: none;
+}
