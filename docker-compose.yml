@@ -1,0 +1,26 @@
+version: "2"
+
+volumes:
+  docs-db-data:
+    external: false
+
+services:
+  db:
+    image: postgres
+    env_file: .env
+    volumes:
+      - docs-db-data:/var/lib/postgresql/db-data
+
+  docs:
+    build: ./freelance_docs
+    env_file:
+      - .env
+    environment:
+      PORT: 3001
+    user: $UID
+    volumes:
+      - ./freelance_docs:/usr/src/app
+    ports:
+      - "3001:3001"
+    depends_on:
+      - db
