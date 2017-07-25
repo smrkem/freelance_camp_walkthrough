@@ -1,3 +1,9 @@
 .document-card {
   margin-bottom: 20px;
 }
+
+.img-wr {
+  border: 1px solid #666;
+  background-color: #aaa;
+  padding: 30px;
+}
