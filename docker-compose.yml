@@ -24,3 +24,17 @@ services:
       - "3001:3001"
     depends_on:
       - db
+
+  props:
+    build: ./freelance_proposals
+    env_file:
+      - .env
+    environment:
+      PORT: 3002
+    user: $UID
+    volumes:
+      - ./freelance_proposals:/usr/src/app
+    ports:
+      - "3002:3002"
+    depends_on:
+      - db
