@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
 import { Proposal } from './proposal';
+import { ProposalsService } from './proposals.service';
 
 @Component({
   moduleId: module.id,
@@ -8,13 +10,6 @@ import { Proposal } from './proposal';
   styleUrls: ['proposal-list.component.css']
 })
 export class ProposalListComponent {
-  proposalOne: Proposal = new Proposal(23, "ACME", "http://example.com/portfolio-a", "Rails, Angular 2", 150, 120, 15, "dude@example.com")
-  proposalTwo: Proposal = new Proposal(36, "ABC", "http://example.com/portfolio-b", "Rails, Angular 2", 150, 120, 15, "dude@example.com")
-  proposalThree: Proposal = new Proposal(99, "XYZ", "http://example.com/portfolio-c", "Lambda, React", 140, 130, 12, "dude@example.com")
 
-  proposals: Proposal[] = [
-    this.proposalOne,
-    this.proposalTwo,
-    this.proposalThree
-  ]
+  proposals: Proposal[];
 }

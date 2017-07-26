@@ -11,6 +11,7 @@ import { DocumentsService } from './documents/documents.service';
 import { ProposalListComponent } from './proposal/proposal-list.component';
 import { ProposalNewComponent } from './proposal/proposal-new.component';
 import { ProposalShowComponent } from './proposal/proposal-show.component';
+import { ProposalsService } from './proposal/proposals.service';
 
 import { AppRoutingModule } from './app-routing.module';
 
