@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import { Proposal } from './proposal';
 import { ProposalsService } from './proposals.service';
@@ -7,9 +8,35 @@ import { ProposalsService } from './proposals.service';
   moduleId: module.id,
   selector: 'proposal-list',
   templateUrl: 'proposal-list.component.html',
-  styleUrls: ['proposal-list.component.css']
+  styleUrls: ['proposal-list.component.css'],
+  providers: [ ProposalsService ]
 })
-export class ProposalListComponent {
+export class ProposalListComponent implements OnInit {
 
   proposals: Proposal[];
+  errorMessage: string;
+  mode = "Observable";
+
+  constructor(
+    private proposalsService: ProposalsService,
+    private router: Router
+  ) {}
+
+  ngOnInit() {
+    let timer = Observable.timer(0, 5000);
+    timer.subscribe(() => this.getProposals());
+  }
+
+  getProposals() {
+    this.proposalsService.getProposals()
+      .subscribe(
+        proposals => this.proposals = proposals,
+        error => this.errorMessage = <any>error
+      )
+  }
+
+  goToShow(proposal: Proposal): void {
+    let link = ['/proposal', proposal.id];
+    this.router.navigate(link);
+  }
 }
